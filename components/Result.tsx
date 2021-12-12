@@ -27,18 +27,15 @@ export default class Result extends React.Component {
     fetchWeather(){
         if(this.state && this.state.city){
         axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=
-        ${this.state.city},fr&appid=147c93777f56eec939aac1431fe16a71`)
+        ${this.state.city},fr&appid=<THE_APP_ID>`)
         .then((response)=> this.setState({report:response.data}));
         }
         else {
             this.setState({city:'Saint-Malo', report:null})
             axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=
-        ${this.state.city},fr&appid=147c93777f56eec939aac1431fe16a71`)
+        ${this.state.city},fr&appid=<THE_APP_ID>`)
         .then((response)=> this.setState({report:response.data}));
         }
-     /*axios.get(`https://pro.openweathermap.org/data/2.5/forecast/daily?q=
-        ${this.state.city}&appid=b1b15e88fa797225412429c1c50c122a1`)
-        .then((response)=> this.setState({report:response.data}));*/
     }
 
     submit(){
